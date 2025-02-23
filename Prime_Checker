@@ -1,0 +1,25 @@
+public class Main {
+    public static void main(String[] args) {
+        double num = 10000001;
+        boolean prime = true;
+        int amount = 1;
+        if (num == 1) {
+            System.out.println("Neither Prime Nor Composite");
+        } else if (num == 2) {
+            System.out.println("Prime Number Found!!!");
+        } else {
+            for (int i = 0; i < num - 2; i++) { 
+                amount = amount + 1;
+                if (num % amount == 0) {
+                    prime = false;
+                    break;
+                }
+            }
+            if (prime) {
+                System.out.println("Prime Number Found!!!");
+            } else {
+                System.out.println("Composite Number Found!!!");
+            }
+        }
+    }
+}
