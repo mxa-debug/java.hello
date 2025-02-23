@@ -1,6 +1,5 @@
 public class PrimeChecker {
-    public static void main(String[] args) {
-        double num = 10000001;
+    public static boolean is_prime(int num) {
         boolean prime = true;
         int amount = 1;
         if (num == 1) {
@@ -15,11 +14,14 @@ public class PrimeChecker {
                     break;
                 }
             }
-            if (prime) {
-                System.out.println("Prime Number Found!!!");
-            } else {
-                System.out.println("Composite Number Found!!!");
-            }
         }
+	
+	return prime;
     }
+
+    public static void main(String[] args) {
+	int num = Integer.parseInt(args[0]);
+	System.out.println(PrimeChecker.is_prime(num));
+	
+	}
 }
