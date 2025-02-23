@@ -1,4 +1,4 @@
-public class Main {
+public class PrimeChecker {
     public static void main(String[] args) {
         double num = 10000001;
         boolean prime = true;
