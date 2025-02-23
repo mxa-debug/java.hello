@@ -1,27 +1,24 @@
 public class PrimeChecker {
-    public static boolean is_prime(int num) {
-        boolean prime = true;
-        int amount = 1;
+    public static boolean is_prime(long num) {
         if (num == 1) {
             System.out.println("Neither Prime Nor Composite");
-        } else if (num == 2) {
+            return false;
+        }
+        if (num == 2) {
             System.out.println("Prime Number Found!!!");
-        } else {
-            for (int i = 0; i < num - 2; i++) { 
-                amount = amount + 1;
-                if (num % amount == 0) {
-                    prime = false;
-                    break;
-                }
+            return true;
+        }
+        for (long i = 2; i <= Math.sqrt(num); i++) { 
+            if (num % i == 0) {
+                return false;  // Not prime if divisible by i
             }
         }
-	
-	return prime;
+        System.out.println("Prime Number Found!!!");
+        return true;
     }
 
     public static void main(String[] args) {
-	int num = Integer.parseInt(args[0]);
-	System.out.println(PrimeChecker.is_prime(num));
-	
-	}
+        long num = Long.parseLong(args[0]);
+        System.out.println(is_prime(num));
+    }
 }
